@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>রিপোর্ট এবং খোজ করুন</title>
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-100 p-20">
+
+  <header class="bg-white p-4  flex">
+    <img src="../image/logo.png" class="w-20" alt="">
+    <h1 class="text-2xl text-blue-600 font-bold mt-6 justify-center ml-11">হারানো এবং খুজে পাওয়া শাখা</h1>
+  </header>
+
+  <section class="my-8 p-4 border rounded-md">
+    <h2 class="text-xl font-bold mb-4">খুজে পাওয়া জিনিসের রিপোর্ট করুন</h2>
+    <form id="lostItemForm" action="#" method="post" class="max-w-md">
+      <div class="mb-4">
+        <label for="itemName" class="block text-sm font-medium text-gray-600">খুজে পাওয়া জিনিসের নামঃ</label>
+        <input type="text" id="itemName" name="itemName" class="mt-1 p-2 w-full border rounded-md">
+        <p id="itemNameError" class="text-red-500 text-xs mt-1 hidden">আপনাকে অবশ্যই খুজে পাওয়া জিনিসের নাম বলতে হবে</p>
+      </div>
+
+      <div class="mb-4">
+        <label for="description" class="block text-sm font-medium text-gray-600">জিনিসের বিস্তারিত লিখুনঃ</label>
+        <textarea id="description" name="description" rows="4" class="mt-1 p-2 w-full border rounded-md"></textarea>
+        <p id="descriptionError" class="text-red-500 text-xs mt-1 hidden">অবশ্যই বিস্তারিত বলতে হবে</p>
+      </div>
+
+      <button type="button" onclick="submitForm()" class="bg-blue-500 text-white p-2 rounded-md">রিপোর্ট করুন</button>
+    </form>
+  </section>
+
+  <section class="my-8">
+    <h2 class="text-xl font-bold mb-4">খুজে পাওয়া জিনিস</h2>
+    <div id="foundItems" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Sample card for found items -->
+      <div class="bg-white p-4 border rounded-md">
+        <h3 class="text-lg font-bold mb-2">প্রোগ্রামিং ইন জাভা বই</h3>
+        <p class="text-gray-600">একটা প্রোগ্রামিং ইন জাভা বই পাওয়া গেছে। বইয়ের মধ্যে নাম ছিলো মোঃ রেন্ডম । এটা পেয়েছি অডিটেরিয়ামে</p>
+        <button onclick="claimItem(this)" class="mt-4 bg-blue-500 text-white p-2 rounded-md">খুজে পাওয়া জিনিস বুঝে নেন</button>
+      </div>
+      <!-- Add more cards for found items -->
+    </div>
+  </section>
+
+  <script src="../script/index.js"></script>
+</body>
+</html>
